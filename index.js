@@ -1,7 +1,13 @@
-const superbowlWin=record.find(result=>{return result.result=== "W"})
-//superbowlWin;
 
-  it('returns undefined if the record has no win objects', function() {
-    const sadReality =  [ { result: "N/A" }, { result: "N/A" }, { result: "N/A" } ]
-    expect(superbowlWin(sadReality)).to.equal(undefined)
+function superbowlWin(array){
+  const wins=array.find(element=>element.result=== "W")
+  const losses=array.find(element=>element.result=== "")
+  if (wins){
+    return wins.year
+  }
+  else{
+    return wins
+  }
 
+}
+superbowlWin(record)
